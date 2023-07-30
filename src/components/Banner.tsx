@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap"
 import house from "../housebanner.jpeg"
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export const Banner=()=>{
 
@@ -10,7 +11,7 @@ export const Banner=()=>{
         <Col>
         <div className="content">
           <img src={house} alt="" />
-          <p>Find your dream house</p>
+          <p>Explore Real Esty <KeyboardArrowDownIcon/></p>
         </div>
         </Col>
       </Row>

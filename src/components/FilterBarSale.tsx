@@ -1,20 +1,22 @@
 import { Container,Row,Col,Form, Button } from "react-bootstrap"
-import { Filter} from "../types"
 
 type Props={
   handleDetail(e:React.ChangeEvent<HTMLSelectElement>):void,
-  filter:Filter,
+  filter:{
+    room:string,
+    bathroom:string,
+    type:string
+  },
   onFilter():void
 }
-export const FilterBar=({filter,handleDetail,onFilter}:Props)=>{
-
+export const FilterBarSale=({filter,handleDetail,onFilter}:Props)=>{
 
   return (
     <Container className="filter">
       <Row>
         <Col>
         <Form.Select value={filter.type} name="type" onChange={handleDetail}>
-          <option value="">Home Type</option>
+          <option >Home Type</option>
           <option value="House">Houses</option>
           <option value="Apartment">Apartments</option>
           <option value="Condo">Condos</option>
@@ -36,29 +38,6 @@ export const FilterBar=({filter,handleDetail,onFilter}:Props)=>{
           <option value="2">2+</option>
           <option value="3">3+</option>
           <option value="0">Any</option>
-        </Form.Select>
-        </Col>
-        <Col>
-        <Form.Select value={filter.pet} name="pet" onChange={handleDetail}>
-          <option value="">Pet</option>
-          <option value="true">Allows</option>
-          <option value="false">No pet</option>
-        </Form.Select>
-        </Col>
-        <Col>
-        <Form.Select value={filter.parking} name="parking" onChange={handleDetail}>
-          <option value="">Parking</option>
-          <option value="true">On-site Parking</option>
-          <option value="false">No parking</option>
-        </Form.Select>
-        </Col>
-        <Col>
-        <Form.Select value={filter.price} name="price" onChange={handleDetail}>
-          <option value="10000">Max Price</option>
-          <option value="2000">$2000</option>
-          <option value="3000">$3000</option>
-          <option value="4000">$4000</option>
-          <option value="10000">Any</option>
         </Form.Select>
         </Col>
         <Col> <Button onClick={onFilter}>Show Results</Button></Col>

@@ -3,6 +3,7 @@ import { useAuthContext } from "../context/AuthContext"
 import PersonIcon from '@mui/icons-material/Person';
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
+import { Link } from "react-router-dom";
 
 export const NavBar=()=>{
 const user=useAuthContext()
@@ -12,13 +13,11 @@ const handleSignOut=()=>{
   localStorage.setItem("user","")
 }
   return (
-    <Navbar>
+    <Navbar collapseOnSelect expand="sm">
       <Container className="navbar-container">
-        <Navbar.Brand href="/">Real Estate</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Brand href="/">Real Esty</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" data-bs-target="#navbarScroll"/>
+        <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/rent">Rent</Nav.Link>
@@ -30,14 +29,13 @@ const handleSignOut=()=>{
             <Dropdown.Toggle id="dropdown-basic">
               <PersonIcon/>
             </Dropdown.Toggle>
-      
             <Dropdown.Menu>
               <Dropdown.Item>{user.email}</Dropdown.Item>
               <Dropdown.Item>Saved Homes</Dropdown.Item>
               <Dropdown.Item href="/" onClick={handleSignOut}>Sign Out</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-             : <Nav.Link href="login">Sign in</Nav.Link>}
+             : <Link to="/login" className="navbar-login">Sign in</Link>}
           </div>
         </Navbar.Collapse>
       </Container>

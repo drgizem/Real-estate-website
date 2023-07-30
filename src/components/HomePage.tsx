@@ -27,10 +27,12 @@ export const HomePage=()=>{
             {Number(homeData.home.room)>1 ? <p>{homeData.home.room} bedrooms</p> : <p>{homeData.home.room} bedroom</p>}
             {Number(homeData.home.bathroom)>1 ? <p>{homeData.home.bathroom} bathrooms</p> : <p>{homeData.home.bathroom} bathroom</p>}
           </div>
+          <hr/>
           <div className="description">
             <h3>Building overview</h3>
             <p>{homeData.home.description}</p>
           </div>
+          <hr/>
           <div className="features">
             <h3>Features</h3>
             <h4>Key features</h4>
@@ -39,11 +41,13 @@ export const HomePage=()=>{
             <h4>Unit features</h4>
             <p>{homeData.home.features}</p>
           </div>
+          <hr/>
           <div className="lease">
             <h3>Lease Terms</h3>
             <p>At least {homeData.home.lease} months</p>
             <p>Price: ${homeData.home.price}/month</p>
           </div>
+          <hr/>
           <div className="scores">
             <h3>Travel scores</h3>
             <Row className="score-row">

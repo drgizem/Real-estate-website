@@ -4,11 +4,13 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useState,useEffect, useRef } from "react";
 import { Home } from "../types";
 import { SaleLoader } from "../firebase/functions";
-
+import { useNavigate } from "react-router-dom";
 
 export const SwipeSale= () => {
   const [sales, setSales] = useState<Home[]>([]);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const navigate=useNavigate()
+
 
   useEffect(() => {
     SaleLoader().then((products) => {
@@ -29,7 +31,9 @@ export const SwipeSale= () => {
       slider.scrollBy({ left: 500, behavior: 'smooth' });
     }
   };
-
+  const handleRoute=(id:string)=>{
+    navigate(`/buy/${id}`)
+  }
   return (
     <Container className="mt-5 mb-5">
       <Row>
@@ -44,7 +48,7 @@ export const SwipeSale= () => {
             </div>
             <div className="swiper-homes" ref={sliderRef}>
               {sales.map((data, index) => (
-                <Card key={index} className="swiper-rental mx-1">
+                <Card key={index} className="swiper-rental mx-1" onClick={()=>handleRoute(data.id)}>
                   <Card.Img src={data.image} alt="" />
                   <h3 className="rentals-title">{data.name}</h3>
                   <Card.Text><strong>${data.price}</strong></Card.Text>
