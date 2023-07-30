@@ -30,7 +30,7 @@ export const Buy=()=>{
       SavedjobsLoader(user.uid).then((data)=>{
         setSavedJobs(data)
       })
-    }
+    }// eslint-disable-next-line
   },[])
 
 const handleSave=async(data:Home)=>{
