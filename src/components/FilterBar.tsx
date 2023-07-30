@@ -61,7 +61,7 @@ export const FilterBar=({filter,handleDetail,onFilter}:Props)=>{
           <option value="10000">Any</option>
         </Form.Select>
         </Col>
-        <Col> <Button onClick={onFilter}>Show Results</Button></Col>
+        <Col> <Button onClick={onFilter}>Search</Button></Col>
       </Row>
     </Container>
   )
