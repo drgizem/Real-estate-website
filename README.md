@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-to view demo ---->[Click](https://main--lucent-sawine-39735e.netlify.app/)
+to view demo ---->[Click](https://main--extraordinary-faloodeh-95c77a.netlify.app/)
 
 ## Available Scripts
 
