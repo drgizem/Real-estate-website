@@ -13,6 +13,7 @@ import { HomeLoader, HomePage } from './components/HomePage';
 import { RentLayout } from './components/RentLayout';
 import { HomePageSale, HomeSaleLoader } from './components/HomePageSale';
 import { BuyLayout } from './components/BuyLayout';
+import { Saved } from './components/Saved';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route index element={<Buy/>} loader={BuyLoader}/>
           <Route  path=':id' element={<HomePageSale/>} loader={HomeSaleLoader} />
         </Route>
+        <Route path='savedhomes' element={<Saved/>}/>
       </Route>
     )
   )

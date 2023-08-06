@@ -31,7 +31,7 @@ const handleSignOut=()=>{
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item>{user.email}</Dropdown.Item>
-              <Dropdown.Item>Saved Homes</Dropdown.Item>
+              <Dropdown.Item href="/savedhomes">Saved Homes</Dropdown.Item>
               <Dropdown.Item href="/" onClick={handleSignOut}>Sign Out</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

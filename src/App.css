@@ -109,6 +109,11 @@ nav.navbar a.navbar-brand{
 .navbar-login:hover{
   color:black
 }
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:hover{
+  box-shadow: none;
+}
 .dropdown button{
   background:none;
   color:black;
@@ -335,4 +340,18 @@ nav.navbar a.navbar-brand{
   color: white;
   border:none;
   background: linear-gradient(to top, #04172f 0%, #33556f 100%);
+}
+/*Saved*/
+.saved-homes{
+  margin-top: 10%;
+}
+@media screen and (min-width:450px) and (max-width:992px) {
+  .saved-homes{
+    padding-top: 5%;
+  }
+}
+@media screen and (max-width:449px){
+  .saved-homes{
+    padding-top: 25%;
+  }
 }

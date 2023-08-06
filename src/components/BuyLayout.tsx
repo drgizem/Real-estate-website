@@ -4,6 +4,7 @@ export const BuyLayout=()=>{
 
   return (
     <>
-    <Outlet/></>
+    <Outlet/>
+    </>
   )
 }

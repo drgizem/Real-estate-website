@@ -6,6 +6,7 @@ export const RentLayout=()=>{
 
   return (
     <>
-    <Outlet/></>
+    <Outlet/>
+    </>
   )
 }
